@@ -76,33 +76,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	</div>
 </footer>
 
-
-<!-- Скрипиты (JS) -->
-<!-- jQuery js -->
-<script src="js/vendor/jquery-1.12.0.min.js"></script>
-<!-- bootstrap js -->
-<script src="js/bootstrap.min.js"></script>
-<!-- owl.carousel js -->
-<script src="js/owl.carousel.min.js"></script>
-<!-- counterup js -->
-<script src="js/jquery.counterup.min.js"></script>
-<script src="js/waypoints.min.js"></script>
-<!-- magnific-popup js -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<!-- mixitup js -->
-<script src="js/jquery.mixitup.min.js"></script>
-<!-- mixitup js -->
-<script src="js/jquery.meanmenu.js"></script>
-<!-- jquery.nav js -->
-<script src="js/jquery.nav.js"></script>
-<!-- jquery.nav js -->
-<script src="js/jquery.parallax-1.1.3.js"></script>
-<!-- animate text js -->
-<script src="js/animate-text.js"></script>
-<!-- plugins js -->
-<script src="js/plugins.js"></script>
-<!-- main js -->
-<script src="js/main.js"></script>
 </body>
 
 </html>

@@ -1,12 +1,14 @@
 <?
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
+
+use Bitrix\Main\Page\Asset;
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-	<? $APPLICATION->ShowHead(); ?>
+
 	<title><? $APPLICATION->ShowTitle(); ?></title>
 
 	<meta charset="utf-8">
@@ -15,38 +17,40 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+	<link rel="shortcut icon" type="image/x-icon" href="<?= SITE_TEMPLATE_PATH ?>/assets/img/favicon.png">
 
-	<!-- Шрифты -->
-	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<?php
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/bootstrap.min.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/owl.carousel.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/animate-text.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/magnific-popup.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/et-line.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/pe-icon-7-stroke.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/shortcode/shortcodes.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/meanmenu.min.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/font-awesome.min.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/style.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/responsive.css');
 
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/modernizr-2.8.3.min.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/jquery-1.12.0.min.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/bootstrap.min.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/owl.carousel.min.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/jquery.counterup.min.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/waypoints.min.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/jquery.magnific-popup.min.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/jquery.mixitup.min.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/jquery.meanmenu.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/jquery.nav.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/jquery.parallax-1.1.3.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/animate-text.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/plugins.js');
+	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/main.js');
 
-	<!-- Стили (CSS) -->
-	<!-- bootstrap css -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/bootstrap.min.css">
-	<!-- bootstrap css -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/owl.carousel.css">
-	<!-- animate-text css -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/animate-text.css">
-	<!-- magnific-popup css -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/magnific-popup.css">
-	<!-- et-line fonts css -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/et-line.css">
-	<!-- pe-icon-7-stroke fonts css -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/pe-icon-7-stroke.css">
-	<!-- Theme shortcodes/elements style -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/shortcode/shortcodes.css">
-	<!-- meanmenu css -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/meanmenu.min.css">
-	<!-- font-awesome css -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/font-awesome.min.css">
-	<!-- style css -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/style.css">
-	<!-- responsive css -->
-	<link rel="stylesheet" href="<?= SITE_TEMPLATE_PATH ?>/assets/css/responsive.css">
-	<!-- modernizr js -->
+	Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">');
+	?>
 
+	<? $APPLICATION->ShowHead(); ?>
 </head>
 
 <body>
@@ -67,8 +71,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
 					<div class="welcome">
-						<span><i class="fa fa-envelope"></i> admin@domain.com</span>
-						<span><i class="fa fa-phone"></i> +012 345 6789</span>
+						<span><i class="fa fa-envelope"></i> webartplus@mail.ru</span>
+						<span><i class="fa fa-phone"></i> +7 (960) 721-04-40</span>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6">
@@ -214,7 +218,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			<div class="row z-index">
 				<div class="col-md-7 col-sm-6">
 					<div class="breadcrumb-title">
-						<h2 class="white-text">О студии</h2>
+						<h2 class="white-text"><? $APPLICATION->ShowTitle(false); ?></h2>
 					</div>
 				</div>
 				<div class="col-md-5 col-sm-6">
