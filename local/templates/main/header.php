@@ -74,8 +74,26 @@ use Bitrix\Main\Page\Asset;
 				<div class="row">
 					<div class="col-md-6 col-sm-6">
 						<div class="welcome">
-							<span><i class="fa fa-envelope"></i> webartplus@mail.ru</span>
-							<span><i class="fa fa-phone"></i> +7 (960) 721-04-40</span>
+							<span>
+								<? $APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									array(
+										"AREA_FILE_SHOW" => "file",
+										"PATH" => SITE_TEMPLATE_PATH . "/includes/header_email.php",
+									)
+								); ?>
+							</span>
+							<span>
+								<? $APPLICATION->IncludeComponent(
+									"bitrix:main.include",
+									"",
+									array(
+										"AREA_FILE_SHOW" => "file",
+										"PATH" => SITE_TEMPLATE_PATH . "/includes/header_phone.php",
+									)
+								); ?>
+							</span>
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-6">
