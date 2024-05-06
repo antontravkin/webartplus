@@ -29,10 +29,12 @@ use Bitrix\Main\Page\Asset;
 	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/shortcode/shortcodes.css');
 	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/meanmenu.min.css');
 	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/font-awesome.min.css');
+	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/animate.css');
 	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/style.css');
 	Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/assets/css/responsive.css');
 
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/modernizr-2.8.3.min.js');
+
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/jquery-1.12.0.min.js');
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/bootstrap.min.js');
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/owl.carousel.min.js');
@@ -46,6 +48,7 @@ use Bitrix\Main\Page\Asset;
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/animate-text.js');
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/plugins.js');
 	Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/assets/js/main.js');
+
 
 	Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">');
 	?>
@@ -64,34 +67,34 @@ use Bitrix\Main\Page\Asset;
     <a href="http://browsehappy.com/">обновите его</a>
 </p>
 <![endif]-->
-
-	<!-- Линия с контактами -->
-	<div class="header-top-area bg-color ptb-10 hidden-xs">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-sm-6">
-					<div class="welcome">
-						<span><i class="fa fa-envelope"></i> webartplus@mail.ru</span>
-						<span><i class="fa fa-phone"></i> +7 (960) 721-04-40</span>
+	<? if ($APPLICATION->GetCurDir() !== '/') : ?>
+		<!-- Линия с контактами -->
+		<div class="header-top-area bg-color ptb-10 hidden-xs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6">
+						<div class="welcome">
+							<span><i class="fa fa-envelope"></i> webartplus@mail.ru</span>
+							<span><i class="fa fa-phone"></i> +7 (960) 721-04-40</span>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-6 col-sm-6">
-					<div class="social-icon-header text-right">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-linkedin"></i></a>
-						<a href="#"><i class="fa fa-google-plus"></i></a>
-						<a href="#"><i class="fa fa-youtube"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-instagram"></i></a>
+					<div class="col-md-6 col-sm-6">
+						<div class="social-icon-header text-right">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-linkedin"></i></a>
+							<a href="#"><i class="fa fa-google-plus"></i></a>
+							<a href="#"><i class="fa fa-youtube"></i></a>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+							<a href="#"><i class="fa fa-instagram"></i></a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-
+	<? endif ?>
 	<!-- Шапка сайта (меню) -->
-	<header id="sticky-header" class="header-area header-wrapper white-bg">
+	<header id="sticky-header" class="header-area header-wrapper <?= ($APPLICATION->GetCurDir() === '/') ? 'transparent-header' : 'white-bg' ?>">
 		<!-- Меню (для десктопа) -->
 		<div class="header-middle-area full-width">
 			<div class="container">
@@ -200,26 +203,28 @@ use Bitrix\Main\Page\Asset;
 	</header>
 
 	<!-- Хлебные крошки (навигация) -->
-	<div class="breadcrumb-area brand-bg ptb-100">
-		<div class="container width-100">
-			<div class="row z-index">
-				<div class="col-md-7 col-sm-6">
-					<div class="breadcrumb-title">
-						<h2 class="white-text"><? $APPLICATION->ShowTitle(false); ?></h2>
+	<? if ($APPLICATION->GetCurDir() !== '/') : ?>
+		<div class="breadcrumb-area brand-bg ptb-100">
+			<div class="container width-100">
+				<div class="row z-index">
+					<div class="col-md-7 col-sm-6">
+						<div class="breadcrumb-title">
+							<h2 class="white-text"><? $APPLICATION->ShowTitle(false); ?></h2>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-5 col-sm-6">
-					<div class="breadcrumb-menu">
-						<ol class="breadcrumb text-right">
-							<li>
-								<a href="index.html">Главная</a>
-							</li>
-							<li>
-								<a href="#">О нас</a>
-							</li>
-						</ol>
+					<div class="col-md-5 col-sm-6">
+						<div class="breadcrumb-menu">
+							<ol class="breadcrumb text-right">
+								<li>
+									<a href="index.html">Главная</a>
+								</li>
+								<li>
+									<a href="#">О нас</a>
+								</li>
+							</ol>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	<? endif ?>
