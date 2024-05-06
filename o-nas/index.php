@@ -135,7 +135,7 @@ $APPLICATION->SetPageProperty('description', 'Description');
                     <div class="single-testimonial black-text text-center">
                         <div class="testimonial-title">
                             <span class="icon-quote"></span>
-                            <h3 class="black-text">Сроки не проблема!</h3>
+                            <h3 class="black-text">Сроки не проблема!!!</h3>
                         </div>
                         <p><span>"</span>Спасут любой проект с самыми горящими сроками! Ребята действительно
                             профессионалы своего дела.<span>"</span>
