@@ -2929,6 +2929,9 @@ NOTE: This is Footer style file. All footer related style included in this file.
     color: #ccc;
     text-transform: capitalize;
 }
+.footer-nav .selected {
+    color: #202020 !important;
+}
 .theme-color-hover a:hover {
     color: #03a9f4;
 }
@@ -3079,6 +3082,10 @@ NOTE: This is Header style file. All Header related style included in this file.
 }
 .main-menu span.indicator {
     margin-left: 3px;
+}
+
+.main-menu .selected {
+    color: #00a9da;
 }
 /*Dropdown Style*/
 .dropdown {
