@@ -75,24 +75,16 @@ use Bitrix\Main\Page\Asset;
 					<div class="col-md-6 col-sm-6">
 						<div class="welcome">
 							<span>
-								<? $APPLICATION->IncludeComponent(
-									"bitrix:main.include",
-									"",
-									array(
-										"AREA_FILE_SHOW" => "file",
-										"PATH" => SITE_TEMPLATE_PATH . "/includes/header_email.php",
-									)
-								); ?>
+								<? $APPLICATION->IncludeComponent("bitrix:main.include", "", [
+									"AREA_FILE_SHOW" => "file",
+									"PATH"           => SITE_TEMPLATE_PATH . "/includes/header_email.php",
+								]); ?>
 							</span>
 							<span>
-								<? $APPLICATION->IncludeComponent(
-									"bitrix:main.include",
-									"",
-									array(
-										"AREA_FILE_SHOW" => "file",
-										"PATH" => SITE_TEMPLATE_PATH . "/includes/header_phone.php",
-									)
-								); ?>
+								<? $APPLICATION->IncludeComponent("bitrix:main.include", "", [
+									"AREA_FILE_SHOW" => "file",
+									"PATH"           => SITE_TEMPLATE_PATH . "/includes/header_phone.php",
+								]); ?>
 							</span>
 						</div>
 					</div>
@@ -121,7 +113,7 @@ use Bitrix\Main\Page\Asset;
 						<!-- Логотип -->
 						<div class="col-md-2 col-sm-3 col-xs-8">
 							<div class="logo ptb-22">
-								<a href="index.html">
+								<a href="/">
 									<img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/logo/logo.png" alt="main logo">
 								</a>
 							</div>
@@ -220,28 +212,29 @@ use Bitrix\Main\Page\Asset;
 		</div>
 	</header>
 
-	<?php if ($APPLICATION->GetCurDir() !== '/') : ?>
-		<!-- Хлебные крошки (навигация) -->
-		<div class="breadcrumb-area brand-bg ptb-100">
+	<!-- Хлебные крошки (навигация) -->
+	<? if ($APPLICATION->GetCurDir() !== '/') : ?>
+		<div class="breadcrumb-area brand-bg ptb-10">
 			<div class="container width-100">
 				<div class="row z-index">
 					<div class="col-md-7 col-sm-6">
 						<div class="breadcrumb-title">
-							<h2 class="white-text"><?php $APPLICATION->ShowTitle(false); ?></h2>
+							<h2 class="white-text"><? $APPLICATION->ShowTitle(false); ?></h2>
 						</div>
 					</div>
-					<?php $APPLICATION->IncludeComponent(
-						"bitrix:breadcrumb",
-						"TopNavigate",
-						array(
-							"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
-							"SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
-							"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
-							"COMPONENT_TEMPLATE" => ".default"
-						),
-						false
-					); ?>
+					<div class="col-md-5 col-sm-6">
+						<div class="breadcrumb-menu">
+							<ol class="breadcrumb text-right">
+								<li>
+									<a href="/">Главная</a>
+								</li>
+								<li>
+									<a href="#">О нас</a>
+								</li>
+							</ol>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	<?php endif; ?>
+	<? endif ?>

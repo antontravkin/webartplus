@@ -16,7 +16,6 @@ $APPLICATION->SetPageProperty('description', 'Description');
                 [
                     "AREA_FILE_SHOW" => "page",
                     "AREA_FILE_SUFFIX" => "about_title",
-
                 ],
                 false
             ); ?>
