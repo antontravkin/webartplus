@@ -126,7 +126,7 @@ use Bitrix\Main\Page\Asset;
 								"top_menu",
 								[
 									"ALLOW_MULTI_SELECT" => "N",
-									"CHILD_MENU_TYPE" => "left",
+									"CHILD_MENU_TYPE" => "subtop",
 									"COMPOSITE_FRAME_MODE" => "A",
 									"COMPOSITE_FRAME_TYPE" => "AUTO",
 									"DELAY" => "N",
@@ -214,26 +214,25 @@ use Bitrix\Main\Page\Asset;
 
 	<!-- Хлебные крошки (навигация) -->
 	<? if ($APPLICATION->GetCurDir() !== '/') : ?>
-		<div class="breadcrumb-area brand-bg ptb-10">
+		<div class="breadcrumb-area brand-bg ptb-100">
 			<div class="container width-100">
 				<div class="row z-index">
 					<div class="col-md-7 col-sm-6">
 						<div class="breadcrumb-title">
-							<h2 class="white-text"><? $APPLICATION->ShowTitle(false); ?></h2>
+							<h2 class="white-text"><?php $APPLICATION->ShowTitle(false); ?></h2>
 						</div>
 					</div>
-					<div class="col-md-5 col-sm-6">
-						<div class="breadcrumb-menu">
-							<ol class="breadcrumb text-right">
-								<li>
-									<a href="/">Главная</a>
-								</li>
-								<li>
-									<a href="#">О нас</a>
-								</li>
-							</ol>
-						</div>
-					</div>
+					<?php $APPLICATION->IncludeComponent(
+						"bitrix:breadcrumb",
+						"TopNavigate",
+						array(
+							"PATH" => "",    // Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+							"SITE_ID" => "s1",    // Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+							"START_FROM" => "0",    // Номер пункта, начиная с которого будет построена навигационная цепочка
+							"COMPONENT_TEMPLATE" => ".default"
+						),
+						false
+					); ?>
 				</div>
 			</div>
 		</div>
