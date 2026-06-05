@@ -1,1 +1,0 @@
-<i class="fa fa-phone"></i> +7 960 721-04-40
